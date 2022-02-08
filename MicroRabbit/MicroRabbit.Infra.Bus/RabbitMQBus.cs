@@ -73,10 +73,10 @@ namespace MicroRabbit.Infra.Bus
 
             _handlers[eventName].Add(handlerType);
 
-            StartBasicConsumer<T>();
+            StartBasicConsume<T>();
         }
 
-        private void StartBasicConsumer<T>() where T : Event
+        private void StartBasicConsume<T>() where T : Event
         {
             var factory = new ConnectionFactory()
             {
